@@ -5,19 +5,20 @@
   "scripts": {
     "build": "next build",
     "dev": "next dev",
-    "lint": "next lint",
+    "format": "prettier --write .",
+    "lint": "eslint .",
     "prepare": "husky",
     "start": "next start"
   },
   "lint-staged": {
-    "*.{ts,tsx,js,cjs}": [
+    "*.{ts,tsx,js,cjs,mjs}": [
       "prettier --write"
     ],
-    "*.{md,html,css,json,yml}": [
+    "*.{md,html,css,json,yml,yaml}": [
       "prettier --write"
     ],
     "package.json": [
-      "pnpm sort-package-json"
+      "sort-package-json"
     ]
   },
   "dependencies": {

@@ -5,11 +5,13 @@ import './globals.css'
 const geistSans = Geist({
   subsets: ['latin'],
   display: 'swap',
+  variable: '--font-geist-sans',
 })
 
 const geistMono = Geist_Mono({
   subsets: ['latin'],
   display: 'swap',
+  variable: '--font-geist-mono',
 })
 
 export const metadata: Metadata = {
@@ -23,10 +25,8 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en">
-      <body className={`${geistSans.className} ${geistMono.className} antialiased`}>
-        {children}
-      </body>
+    <html lang="en" className={`${geistSans.variable} ${geistMono.variable}`}>
+      <body className="bg-background font-sans text-foreground antialiased">{children}</body>
     </html>
   )
 }
